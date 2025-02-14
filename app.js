@@ -43,6 +43,11 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.send("hello hotel")
+  console.log("Hello hotel")
+})
+
 
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useFindAndModify", false);
