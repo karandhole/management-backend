@@ -33,15 +33,7 @@ if (!process.env.JWTKEY) {
 } else {
   jwtKey = process.env.JWTKEY;
 }
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  next();
-});
+app.use(cors({ origin: "*" })) ;
 
 
 mongoose.set("useNewUrlParser", true);
@@ -2718,7 +2710,7 @@ function verifyEmployee(req, res, next) {
   }
 }
 
-var port = 4000;
+// var port = 4000;
 if (process.env.PORT) {
   app.listen(process.env.PORT, process.env.IP, () => {
     console.log("started");
