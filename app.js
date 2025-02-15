@@ -6,13 +6,7 @@ var express = require("express"),
   autoIncrement = require("mongoose-auto-increment"),
   Joi = require("joi"),
   app = express();
-  app.use(
-    cors({
-      origin: "*", // Allows all origins
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      allowedHeaders: ["Content-Type", "Authorization"],
-    })
-  );
+  
 jwt = require("jsonwebtoken");
 
 //connecting to mongodb
@@ -36,8 +30,8 @@ if (!process.env.JWTKEY) {
 app.use(cors({ origin: "*" })) ;
 
 app.get('/', (req, res) => {
-  res.send("hello hotel")
-  console.log("Hello hotel")
+  res.send("hello app is running")
+  console.log("Hello ")
 })
 
 
